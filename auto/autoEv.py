@@ -123,3 +123,4 @@ class PJ():
                 return  parser.lis
         except:
                 print('网络状况不佳。。。评教失败 ╮(╯▽╰)╭')
+                return ['网络不佳，只评了部分老师，请重试']
