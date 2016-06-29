@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from .autoEv import PJ
+from .getScore import score
 from django.views.decorators.csrf import csrf_exempt
 import logging
 import sys
@@ -21,9 +22,13 @@ logger.addHandler(stream_handler)
 def input(request):
     if request.method == 'POST':
         print(request.POST['id'],request.POST['passwd'])
-        res = PJ(request.POST['id'],request.POST['passwd']).run()
-        logger.warning("username" + request.POST['id'])
+        if request.POST['t'] == 'pj':
+            res = PJ(request.POST['id'],request.POST['passwd']).run()
+            logger.warning("username" + request.POST['id'])
+        else:
+            res = score(request.POST['id'],request.POST['passwd']).run()
+            logger.warning("score_username" + request.POST['id'])
         return render_to_response('res.html',{'res':res }, context_instance=RequestContext(request))
     else:
-        test = " "
+        test = ""
         return render_to_response('input.html',{'test': test}, context_instance=RequestContext(request))

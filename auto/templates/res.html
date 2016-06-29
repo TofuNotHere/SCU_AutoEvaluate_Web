@@ -10,12 +10,12 @@
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" >
             <h3 class="text-center">
                 简单粗暴的结果展示
             </h3>
             {% for var in res %}
-            <h5>{{ var }}</h5>
+            <pre><h5>{{ var }}</h5></pre>
             {% endfor %}<br><br>
 			<h5>如果什么结果都没有，一般是账号密码错了，或者教务处崩了~~</h5>
 			<a href="https://github.com/TofuNotHere/SCU_AutoEvaluate_Web"><h4>项目源码，有兴趣的可以看看</h4></a>

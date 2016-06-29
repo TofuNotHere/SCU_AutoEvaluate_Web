@@ -5,9 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>一键评教</title>
+    <title>一键评教&查分</title>
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   </head>
+  <script>
+
+    function score(){
+        document.getElementById("btntype").value = "score";
+    }
+    function pj(){
+        document.getElementById("btntype").value = "pj";
+    }
+
+    </script>
     <body>
         <div class="container-fluid" align = "center">
             <h3 class="text-center">
@@ -22,14 +32,15 @@
                  <br>
                  <label class="control-label" for="inputPassword">密码</label>
                  <input id="inputPassword" type="password" name="passwd"/>
-
+                 <input id="btntype" name="t" type="hidden" value=""/>
                 <div class="control-group" align = "center">
                     <div class="controls">
                          <br>
-                        <button type="submit" class="btn btn-danger">一键评教</button>
+                        <button type="submit" class="btn btn-danger" onclick="pj()">一键评教</button>
+                        <button type="submit" class="btn btn-success" onclick="score()">成绩查询</button>
                     </div>
 					<br><br><br>
-					<h5>因为使用人数较多，而这个程序是从外网访问教务处的，所以现在完成评教的的响应时间约为1-3分钟，请耐心等待。。。</h5>
+					<h5>因为使用人数较多，而这个程序是从外网访问教务处的，所以现在后台的响应时间约为1-3分钟，请耐心等待。。。</h5>
 					<h5>如果长时间没有响应，可能是教务系统崩了→_→</h5>
 					<h4>打个广告，欢迎加入四川大学Python协会，群号：195317885</h4>
 					<h5><a href="https://github.com/TofuNotHere/SCU_AutoEvaluate_Web">项目源码</h5>
