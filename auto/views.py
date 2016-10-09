@@ -21,9 +21,9 @@ logger.addHandler(stream_handler)
 @csrf_exempt
 def input(request):
     if request.method == 'POST':
-        print(request.POST['id'],request.POST['passwd'])
+        #print(request.POST['id'],request.POST['passwd'])#debug
         if request.POST['t'] == 'pj':
-            #res = PJ(request.POST['id'],request.POST['passwd']).run()#debug
+            res = PJ(request.POST['id'],request.POST['passwd']).run()
             logger.warning("username" + request.POST['id'])
         else:
             res = score(request.POST['id'],request.POST['passwd']).run()
