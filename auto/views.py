@@ -23,7 +23,7 @@ def input(request):
     if request.method == 'POST':
         print(request.POST['id'],request.POST['passwd'])
         if request.POST['t'] == 'pj':
-            res = PJ(request.POST['id'],request.POST['passwd']).run()
+            #res = PJ(request.POST['id'],request.POST['passwd']).run()#debug
             logger.warning("username" + request.POST['id'])
         else:
             res = score(request.POST['id'],request.POST['passwd']).run()
